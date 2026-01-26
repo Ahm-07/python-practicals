@@ -1,0 +1,6 @@
+name=input("Enter your name:")
+age=input("Enter your age:")
+address=input("Enter your Address:")
+print(f"How are you {name}?")
+print(f"I am {age} years old")
+print(f"I live in {address}")
