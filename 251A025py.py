@@ -12,3 +12,5 @@ print("Calculation of Area of Square")
 side=float(input("Enter the side:"))
 area=side*side
 print(f"Area of Square={area}")
+print("UIN:251A025")
+print("Date:20-01-2026")
