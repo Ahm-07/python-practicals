@@ -1,3 +1,5 @@
+print("UIN:251A025")
+print("Date:09-02-2026")
 # Printing a right-angled triangle pattern
 
 rows = int(input("Enter number of rows: "))
