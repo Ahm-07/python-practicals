@@ -1,3 +1,5 @@
+print("UIN:251A025")
+print("Date:09-02-2026")
 Student={}
 n=int(input("Enter the number of students:"))
 for _ in range(n):
