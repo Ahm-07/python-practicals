@@ -40,5 +40,4 @@ while choice != "exit":
         elif choice == "5":
             print("Remainder=",modulus(a,b))    
         else:
-            print("Wrong input!!Please Try Again")
-           
+            print("Wrong input!!Please Try Again")   
