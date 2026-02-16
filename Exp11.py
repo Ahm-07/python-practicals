@@ -22,7 +22,8 @@ def modulus(a,b):
     
 choice = ""
 while choice != "exit":
-    choice = input("---MENU---\n 1:ADDITION\n 2:SUBTRACTION\n 3:DIVISION\n 4:MULTIPLICATION\n 5:MODULUS\n EXIT:Exit the Program\n").lower()
+    choice = input("---MENU---\n 1:ADDITION\n 2:SUBTRACTION\n 3:DIVISION\n
+     4:MULTIPLICATION\n 5:MODULUS\n EXIT:Exit the Program\n").lower()
     if choice == "exit":
         print("Exiting Program!!!")
         break
