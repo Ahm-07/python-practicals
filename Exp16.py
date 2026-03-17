@@ -5,7 +5,8 @@ phone = input("Enter your number:")
 email = input("Enter your Email:")
 
 mobile_pattern= r"^[6-9]\d{9}$"
-email_pattern= r"^[\w\.-]+@[\w\.-]+\.[\w\.-]{2,}+$"
+email_pattern= r"^[\w\.-]+@[\w\.-]+
+\.[\w\.-]{2,}+$"
 
 if re.fullmatch(mobile_pattern,phone):
     print("Valid Phone Number")
