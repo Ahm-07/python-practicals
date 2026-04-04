@@ -22,11 +22,13 @@ class ShoppingCart:
         else:
             print(f"Insufficient stock for {product.name}.\n")
     def calculate_total(self):
-        total = sum(product.price * quantity for product, quantity in self.items)
+        total = sum(product.price * quantity for product, quantity in
+                    self.items)
         return total
     def process_order(self):
         total_cost = self.calculate_total()
-        print(f"Order processed for {self.customer.name}.\n Total cost: {total_cost}\n")
+        print(f"Order processed for {self.customer.name}.\n 
+        Total cost: {total_cost}\n")
 # Example usage
 if __name__ == "__main__":
     # Create products
