@@ -12,7 +12,8 @@ print(df.describe())
 df = df.drop_duplicates()
 df['Date'] = pd.to_datetime(df['Date'])
 # Aggregation
-summary = df.groupby('Country')[['Confirmed','Recovered','Deaths']].sum()
+summary = df.groupby('Country')[['Confirmed',
+          'Recovered','Deaths']].sum()
 print(summary)
 # Plotting
 # Line Plot
