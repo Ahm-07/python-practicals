@@ -1,3 +1,5 @@
+print("UIN:251A025")
+print("Date:07-04-26")
 class Product:
     def __init__(self, name, price, stock):
         self.name = name
