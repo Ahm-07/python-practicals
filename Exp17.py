@@ -1,47 +1,61 @@
+print("Date:13-04-2026")
 print("UIN:251A025")
-print("Date:07-04-26")
+# Product Class
 class Product:
     def __init__(self, name, price, stock):
         self.name = name
         self.price = price
         self.stock = stock
-    def update_stock(self, quantity):
-        self.stock += quantity
-        print(f"Stock updated. New stock of {self.name}: {self.stock}\n")
+
+
+# Customer Class
 class Customer:
-    def __init__(self, name, email):
+    def __init__(self, name):
         self.name = name
-        self.email = email
-class ShoppingCart:
+
+
+# Cart Class
+class Cart:
     def __init__(self, customer):
-        self.customer = customer
         self.items = []
-    def add_item(self, product, quantity):
-        if product.stock >= quantity:
-            self.items.append((product, quantity))
-            product.update_stock(-quantity)
-            print(f"Added {quantity} of {product.name} to cart.\n")
+        self.total = 0
+        self.customer = customer   # store customer
+
+    def add(self, product, qty):
+        if product.stock >= qty:
+            self.items.append((product, qty))
+            print(product.name, "added")
         else:
-            print(f"Insufficient stock for {product.name}.\n")
+            print("Not enough stock")
+
     def calculate_total(self):
-        total = sum(product.price * quantity for product, quantity in
-                    self.items)
-        return total
-    def process_order(self):
-        total_cost = self.calculate_total()
-        print(f"Order processed for {self.customer.name}.\n 
-        Total cost: {total_cost}\n")
-# Example usage
-if __name__ == "__main__":
-    # Create products
-    product1 = Product("Laptop", 1000, 10)
-    product2 = Product("Smartphone", 500, 20)
-    # Create a customer
-    customer = Customer("Alice", "alice@eng.rizvi.edu.in")
-    # Create a shopping cart
-    cart = ShoppingCart(customer)
-    # Add items to the cart
-    cart.add_item(product1, 1)
-    cart.add_item(product2, 2)
-    # Process the order
-    cart.process_order()
+        self.total = 0
+        for product, qty in self.items:
+            self.total += product.price * qty
+        return self.total
+
+    def place_order(self):
+        print("\nCustomer:", self.customer.name)   # print customer name
+        for product, qty in self.items:
+            product.stock -= qty
+        print("Order placed")
+
+
+# Main Program
+p1 = Product("Laptop", 50000, 5)
+p2 = Product("Mobile", 20000, 10)
+
+customer = Customer("Komal")
+
+cart = Cart(customer)   # pass customer
+
+cart.add(p1, 1)
+cart.add(p2, 2)
+
+print("Total Cost:", cart.calculate_total())
+
+cart.place_order()
+
+print("\nRemaining Stock:")
+print(p1.name, p1.stock)
+print(p2.name, p2.stock)
